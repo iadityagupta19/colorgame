@@ -21,8 +21,15 @@ public class SubscriptionService {
         things.put("Frog", new Thing("Frog", Arrays.asList("Blue", "Yellow")));
     }
     public void subscribe(String name) {
-        if (things.containsKey(name)) {
-            subscriptions.add(name);
+         String newName = name.substring(1);
+        if (things.containsKey(newName)) {
+            if (name.startsWith("+")) {
+                subscriptions.add(newName);
+
+            }
+            else {
+                this.unsubscribe(newName);
+            }
         }
     }
     public void unsubscribe(String name) {

@@ -24,10 +24,7 @@ public class CommandController {
         subscriptionService.subscribe(name);
     }
 
-    @PostMapping("/unsubscribe")
-    public void unsubscribe(@RequestParam String name) {
-        subscriptionService.unsubscribe(name);
-    }
+
 
     @GetMapping("/list")
     public Set<String> listSubscriptions() {
